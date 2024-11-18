@@ -1,0 +1,161 @@
+.custom-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #252525;
+  height: 80px;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.container:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: ease-in-out 0.3s;
+}
+
+.name{
+  font-weight: bold;
+  font-size: 24px;
+  color:white;
+}
+
+.logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.search-bar-container {
+  margin-top: 20px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.search-bar {
+  max-width: 500px;
+  width: 100%;
+
+}
+
+.avatar img {
+  width: 100%;
+  height: auto;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar .mat-icon {
+  color: white;
+}
+
+.search-bar input::placeholder {
+  color: white;
+
+}
+
+
+.search-bar input:focus {
+  color: white;
+}
+
+.search-bar input {
+  color: white;
+}
+
+.icon-buttons {
+  display: flex;
+}
+
+.icon-buttons button {
+  margin-left: 8px;
+  margin-right: 8px;
+  height: 48px;
+}
+
+.mat-form-field-wrapper {
+  height: 48px;
+}
+
+.mat-form-field-flex {
+  height: 100%;
+}
+
+@media (max-width: 1024px) {
+  .custom-toolbar {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 16px;
+  }
+
+  .container {
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .search-bar-container {
+    width: 100%;
+    order: 3;
+    margin-top: 16px;
+  }
+
+  .search-bar {
+    max-width: none;
+  }
+
+  .icon-buttons {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 20px;
+  }
+
+  .logo {
+    height: 32px;
+  }
+
+  .icon-buttons button {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-toolbar {
+    padding: 12px;
+  }
+
+  .name {
+    font-size: 18px;
+  }
+
+  .logo {
+    height: 28px;
+    margin-right: 8px;
+  }
+
+  .icon-buttons button {
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
+  .avatar img {
+    width: 32px;
+    height: 32px;
+  }
+}

@@ -1,0 +1,42 @@
+<mat-toolbar color="warn" class="custom-toolbar">
+    <div class="container">
+      <img class="logo" src="TutorMatch.png" alt="user" height="118" width="50">
+      <div>
+        <span class="name">TutorMatch</span>
+      </div>
+    </div>
+    <div class="icon-buttons">
+      <button mat-button class="custom-button login-button" >Log In</button>
+      <button mat-button class="custom-button register-button" (click)="onSignUp()">Sign Up</button>
+      <button mat-icon-button [matMenuTriggerFor]="languageMenu" aria-label="Change language">
+        <mat-icon>language</mat-icon>
+      </button>
+    </div>
+
+    <mat-menu #languageMenu="matMenu">
+      <app-language-switcher></app-language-switcher>
+    </mat-menu>
+  </mat-toolbar>
+
+    <div class="login-container">
+      <mat-card class="login-card">
+        <mat-card-title>{{ 'footer.message' | translate }}</mat-card-title>
+        <mat-card-subtitle>{{ 'footer.title' | translate }}</mat-card-subtitle>
+
+        <mat-card-content>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-form-field color="warn"  appearance="outline" class="form-field">
+              <mat-label>{{ 'footer.pEmail' | translate }}</mat-label>
+              <input matInput formControlName="email" [placeholder]="'footer.pEmail' | translate">
+            </mat-form-field>
+            <mat-form-field color="warn"  appearance="outline" class="form-field">
+              <mat-label>{{ 'footer.pPassword' | translate }}</mat-label>
+              <input matInput formControlName="password" type="password" [placeholder]="'footer.pPassword' | translate">
+            </mat-form-field>
+            <a href="#" class="forgot-password">{{ 'footer.forgot' | translate }}</a>
+            <button mat-raised-button color="warn" type="submit" [disabled]="loginForm.invalid" class="submit-button">{{ 'footer.signIn' | translate }}</button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+

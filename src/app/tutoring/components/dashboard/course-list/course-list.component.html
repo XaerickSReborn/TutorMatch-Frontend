@@ -1,0 +1,27 @@
+<app-toolbar></app-toolbar>
+<div class="container" *ngIf="semesterCourses.length > 0; else noTutorings">
+  <h1>{{ semesterName }}</h1>
+
+  <div class="courses-grid">
+    <a *ngFor="let tutoring of semesterCourses" [routerLink]="tutoring.id ? ['/tutorings', tutoring.id] : null" class="course-card">
+      <div>
+        <img [src]="tutoring.image || 'assets/images/default-image-url.png'" alt="Tutoring Image">
+        <h2>{{ tutoring.title }}</h2>
+        <p *ngIf="tutoring.tutorName">{{ 'footer.DictatedBy' | translate }}: {{ tutoring.tutorName }}</p>
+        <p *ngIf="tutoring.price">{{ 'footer.Price' | translate }}: S/. {{ tutoring.price }}</p>
+        <button class="request-tutoring-button">{{ 'footer.RequestTutoring' | translate }}</button>
+      </div>
+    </a>
+  </div>
+</div>
+
+<ng-template #noTutorings>
+  <div class="container">
+    <h1>{{ semesterName }}</h1>
+    <div class="centered-container">
+      <p>{{ 'footer.noTutoringsCourse' | translate }}</p>
+    </div>
+  </div>
+</ng-template>
+
+<app-footer-content></app-footer-content>
